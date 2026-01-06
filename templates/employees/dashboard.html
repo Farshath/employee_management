@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-12">
+        <h2 class="mb-4">Dashboard</h2>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="card text-center text-white bg-success mb-3">
+            <div class="card-header">Total Employees</div>
+            <div class="card-body">
+                <h1 class="card-title display-4">{{ total_employees }}</h1>
+                <p class="card-text">Active employees in the system</p>
+            </div>
+        </div>
+    </div>
+    <!-- Add more cards (departments, etc.) here if needed -->
+    <div class="col-md-4">
+        <div class="card text-center text-dark bg-light mb-3">
+            <div class="card-header">Quick Actions</div>
+            <div class="card-body">
+                <a href="{% url 'employee_create' %}" class="btn btn-primary d-block mb-2">Add New Employee</a>
+                <a href="{% url 'employee_list' %}" class="btn btn-info d-block mb-2">View List</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
